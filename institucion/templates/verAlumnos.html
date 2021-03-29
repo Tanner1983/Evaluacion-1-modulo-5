@@ -1,0 +1,37 @@
+{% extends "Base.html" %}
+{%block pestana%} Litado de Alumnos {%endblock%}
+
+{%block contenido%}
+<div class="container">
+    <h1>Estudiantes</h1> <br>
+    
+    <div class="table-responsive-sm-md">
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Rut</th>
+                <th scope="col">DV</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Carrera</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% if estudiantes %}
+                {% for alumno in estudiantes %}
+	            <tr>
+                    <th scope="row">{{alumno.id_alumno}}</th>
+                    <td>{{alumno.rut}}</td>
+                    <td>{{alumno.dv}}</td>
+                    <td>{{alumno.nombre}}</td>
+                    <td>{{alumno.apellido}}</td>
+                    <td>{{alumno.carrera}}</td>
+                </tr>   
+                {% endfor %}
+                {% endif %}   
+            </tbody>
+        </table>
+    </div>      
+</div>
+{%endblock%}
